@@ -75,7 +75,15 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Since the subscriber model is monolithic, a single struct will suffice
+2. DashMap is not strictly necessary but highly recommended for optimal performance because it is needed for the efficiency of unique identifiers handling
+3. DashMap is still needed because it provides efficient thread-safe concurrent access
 
 #### Reflection Publisher-2
-
+1. It follows SRP, making it more mantainable, scalable, and testable
+2. It will lead to tight coupling, making it less mantainable, scalable, and testable
+3. Postman helps my testing by providing request automation and response validation
 #### Reflection Publisher-3
+1. The push model is used
+2. The pull model would give subscribers control over data request but it could lead to unnecessary requests and delays
+3. It will slow down because the process will be squential
